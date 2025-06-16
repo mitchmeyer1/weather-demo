@@ -56,6 +56,7 @@ group :development do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'webmock'
+  gem 'mock_redis'
 end
 
 group :test do
@@ -66,6 +67,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'webmock'
+  gem 'mock_redis'
 end
 
 gem "redis", "~> 5.4"

@@ -30,7 +30,7 @@ class WeatherFetcher
     end
 
     def self.hourly_weather(weather_json)
-      return [] unless weather_json['hourly'] && weather_json['hourly']['time']
+      raise "Problem fetching hourly forcast" unless weather_json['hourly'] && weather_json['hourly']['time']
 
       hourly = weather_json['hourly']
       times = hourly['time']
@@ -52,7 +52,7 @@ class WeatherFetcher
     end
 
     def self.daily_weather(weather_json)
-      return [] unless weather_json['daily'] && weather_json['daily']['time']
+       raise "Problem fetching daily forcast" unless weather_json['daily'] && weather_json['daily']['time']
 
       daily = weather_json['daily']
       times = daily['time']

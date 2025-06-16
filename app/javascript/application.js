@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
         : 'No precipitation';
 
       currentWeather.innerHTML = `
-        <span style='font-size:2em;'>${temp}${unit}</span><br>
+        <span style='font-size:2em;'>${Math.round(temp)}${unit}</span><br>
         Wind: ${data.current_weather.wind_speed_10m} km/h<br>
         <span style='font-size:1em;'>${precip}</span>`;
     } else {
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <div><strong>${friendlyDay}</strong></div>
           <div style="font-size: 0.8em;">${monthDay}</div>
           <div style="font-size: 0.8em;">${precipText}</div>
-          <div style="font-size: 0.8em;">${min} - ${max}${unit}</div>
+          <div style="font-size: 0.8em;">${Math.round(min)} - ${Math.round(max)}${unit}</div>
         `;
         dailyContainer.appendChild(dayTile);
       });
