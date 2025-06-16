@@ -10,7 +10,8 @@ class WeatherFetcher
       return { error: 'Could not geocode zip', status: :unprocessable_entity }
     end
 
-    weather = WeatherApi.fetch(geo[:lat], geo[:lon], geo[:timezone_code])[0]
+    weather = WeatherApi.fetch(geo[:lat], geo[:lon], geo[:timezone_code])
+
 
     # Format data to be easier to implement for front end clients
     weather['hourly_weather'] = hourly_weather(weather)

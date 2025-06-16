@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === FETCH BUTTON EVENT HANDLER ===
   fetchButton.addEventListener('click', function () {
+    console.log('Fetch button clicked');
     // Clear previous messages and data
     errorMessage.textContent = '';
     sourceMessage.textContent = '';
