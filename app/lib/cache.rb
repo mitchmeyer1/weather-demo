@@ -1,3 +1,4 @@
+
 class Cache
   def self.read(key)
     val = $redis.get(key)
