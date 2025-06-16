@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dataDisplay = document.getElementById('data-display');
   const addressInput = document.getElementById('address-input');
   const errorMessage = document.getElementById('error-message');
+  const sourceMessage = document.getElementById('source-message');
   const currentWeather = document.getElementById('current-weather');
   const forecastTableContainer = document.getElementById('forecast-table-container');
   const unitToggle = document.getElementById('unit-toggle');
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchButton.addEventListener('click', function () {
     // Clear previous messages and data
     errorMessage.textContent = '';
+    sourceMessage.textContent = '';
     currentWeather.textContent = '';
     forecastTableContainer.innerHTML = '';
     dataDisplay.style.display = 'none';
@@ -140,12 +142,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return data;
       })
-      .then(data => renderWeather(data))
+      .then(data => {
+        sourceMessage.textContent = `Data retrieved from ${data.source}`;
+        renderWeather(data);
+      })
       .catch(error => {
         console.error('Error fetching weather data:', error);
         errorMessage.textContent = error.message;
         currentWeather.textContent = '';
         forecastTableContainer.innerHTML = '';
+        sourceMessage.textContent = '';
+
       });
   });
 

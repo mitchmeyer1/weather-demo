@@ -41,6 +41,11 @@ button {
   margin-top: 10px;
   margin-bottom: 0;
 }
+#source-message {
+  color: #2f45d3;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 #current-weather {
   font-size: 1.5em;
   margin-top: 20px;

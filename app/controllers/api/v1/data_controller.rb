@@ -13,6 +13,7 @@ module Api
         end
 
         data = WeatherFetcher.call(zip)
+        data[:result][:source] = data[:source]
 
         if data[:error]
           render json: { error: data[:error] }, status: data[:status] and return

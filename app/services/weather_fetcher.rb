@@ -2,7 +2,7 @@ class WeatherFetcher
   def self.call(zip)
     cached = Cache.read("latest_data/#{zip}")
     if cached
-      return { result: cached }
+      return { result: cached, source: 'cache' }
     end
 
     geo = GeoCoder.lookup(zip)
@@ -25,7 +25,7 @@ class WeatherFetcher
 
     Cache.write("latest_data/#{zip}", filtered_weather, 30.minutes)
 
-    { result: filtered_weather }
+    { result: filtered_weather, source: 'api'  }
     end
 
     def self.hourly_weather(weather_json)
