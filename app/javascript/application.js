@@ -1,7 +1,5 @@
 // Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Home page script loaded');
-
   // === DOM ELEMENT REFERENCES ===
   const fetchButton = document.getElementById('fetch-button');
   const dataDisplay = document.getElementById('data-display');
@@ -90,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === FETCH BUTTON EVENT HANDLER ===
   fetchButton.addEventListener('click', function () {
-    console.log('Fetch button clicked');
     // Clear previous messages and data
     errorMessage.textContent = '';
     sourceMessage.textContent = '';
@@ -144,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return data;
       })
       .then(data => {
+        console.log('Weather data:');
+        console.log(JSON.stringify(data));
         sourceMessage.textContent = `Data retrieved from ${data.source}`;
         renderWeather(data);
       })
