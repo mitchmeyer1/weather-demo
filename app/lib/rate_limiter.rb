@@ -1,5 +1,5 @@
 module RateLimiter
-  LIMIT = 100
+  LIMIT = 20
   WINDOW = 60 # seconds
 
   def self.allowed?(ip)

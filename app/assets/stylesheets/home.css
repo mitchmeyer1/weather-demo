@@ -94,3 +94,18 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+#address-input {
+    width: 300px; 
+    padding: 10px; 
+    margin-right: 10px;
+}
+
+#current-weather {
+    font-size: 1.5em; 
+    margin-top: 20px;
+}
+#daily-weather {
+    font-size: 1.5em; 
+    margin-top: 20px
+}
