@@ -24,21 +24,41 @@ A Ruby on Rails API service that provides weather data by ZIP code, featuring Re
 
 ## Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone git@github.com:mitchmeyer1/weather-demo.git
-   cd aws_test_weather_app
-   ```
+### macOS / Linux
 
-2. Copy the environment file:
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+# Clone the repository
+git clone git@github.com:mitchmeyer1/weather-demo.git
+cd aws_test_weather_app
 
-3. Build and start the services:
-   ```bash
-   docker-compose up --build
-   ```
+# Copy environment file
+cp .env.example .env
+
+# Build and start Docker services
+docker-compose up --build
+```
+
+---
+
+### Windows
+
+#### Option A: Git Bash or WSL (recommended)
+
+```bash
+git clone git@github.com:mitchmeyer1/weather-demo.git
+cd aws_test_weather_app
+cp .env.example .env
+docker-compose up --build
+```
+
+#### Option B: PowerShell
+
+```powershell
+git clone git@github.com:mitchmeyer1/weather-demo.git
+cd aws_test_weather_app
+Copy-Item .env.example .env
+docker-compose up --build
+```
 
 The application will be available at `http://localhost:3000`
 

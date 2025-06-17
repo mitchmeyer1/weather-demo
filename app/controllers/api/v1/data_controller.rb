@@ -32,7 +32,7 @@ module Api
             # Add data source information (cache or API) to the response
             data[:result][:source] = data[:source]
             render json: data[:result]
-          rescue e 
+          rescue => e 
             render json: { error: 'unknown server error' }, status: :internal_server_error
           end
         end

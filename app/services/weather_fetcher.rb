@@ -42,7 +42,9 @@ class WeatherFetcher
     # @param weather_json [Hash] Raw weather API response
     # @return [Array<Hash>] Formatted hourly weather data grouped by day
     def self.hourly_weather(weather_json)
-      raise "Problem fetching hourly forcast" unless weather_json['hourly'] && weather_json['hourly']['time']
+      raise "Problem fetching hourly forcast" unless weather_json['hourly'] && weather_json.dig('hourly', 'time')
+
+      # Extract hourly data and group by day
 
       hourly = weather_json['hourly']
       times = hourly['time']
